@@ -1,0 +1,85 @@
+body {
+    background-color: #ffffff;
+    background-image: url("/static/img/escuela-fondo2.png");
+    background-size: cover;
+
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Century Gothic', sans-serif;
+
+}
+  
+  .user-img {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  /*Tamaño imagen*/
+  .user-img img{
+    width: 120px;
+    height: 130px;
+    box-shadow: 3px 3px 3px #000000;
+    border-radius: 70%;
+  }
+  header {
+    width: 100%;
+    padding: .4px;
+    color: white;
+    text-align: center;
+    background: #4d0a0a;
+  }
+  
+  nav ul {
+    background: #7c3a3a;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+  
+  }
+  
+  ul li {
+    display: inline-block;
+    padding: 20px;
+    transition: all ease-in-out 250ms;
+  }
+  
+  ul li:hover {
+    background: #000000;
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hide {
+    padding: 16px;
+    font-size: 22px;
+    background: #3d0707;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    ul li {
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+    }
+  
+    .hide {
+      display: block;
+    }
+  
+    nav ul {
+    display: none;
+  
+    }
+  }

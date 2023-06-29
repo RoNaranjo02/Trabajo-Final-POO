@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bienvenido</title>
+  <link rel="stylesheet" href="static/css/menuPreceptor.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+  <div class="col-12 user-img">
+    <img src="..\static\img\Logo.png" />
+  <h1>Bienvenido Preceptor</h1>
+  <h2>Colegio San Miguel</h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a class="inicio" href="{{ url_for('menupreceptor') }}">Inicio</a></li>
+    <li><a class ="Registro" href="{{ url_for('registrarAsistencia') }}">Registrar asistencia</a></li>
+    <li><a class ="Informe" href="{{ url_for('generarInforme') }}">Informe con detalles</a></li>
+    <li><a class ="Cerrar sesion" href="{{ url_for('inicio') }}">Cerrar sesion</a></li>
+
+  </ul>
+  <div class="hide">
+    <i class="fa fa-bars" aria-hidden="true"></i> Menu
+  </div>
+</nav>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(".hide").on('click', function() {
+      $("nav ul").toggle('slow');
+    })
+  </script>
+
+</body>
+</html>

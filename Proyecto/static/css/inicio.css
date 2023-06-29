@@ -1,0 +1,74 @@
+body {
+  background-image: url("/static/img/escuela-fondo2.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+/*Fondo inicio*/
+.main-section {
+  margin:0 auto;
+  margin-top:35%;
+  padding: 0;
+  background-color: #3b4652;
+  opacity: .85;
+  padding: 20px;
+  box-shadow: 0px 0px 3px #848484;
+}
+.user-img {
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+/*Tamaño imagen*/
+.user-img img{
+  width: 120px;
+  height: 130px;
+  box-shadow: 3px 3px 3px #000000;
+  border-radius: 70%;
+}
+/* .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+} */
+
+/* .card-text {
+  margin-bottom: 20px;
+} */
+
+/* .card-body {
+  margin-bottom: 20px;
+} */
+
+.padre,
+.Preceptor {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.padre:hover,
+.Preceptor:hover {
+  background-color: #0056b3;
+}
+
+.navbar-brand {
+  text-align: center;
+  color: #fff;
+}
+.navbar-brand {
+  text-align: center;
+  color: #fff;
+}
+.card-body { 
+  text-align: center;
+  color: #fff;
+}

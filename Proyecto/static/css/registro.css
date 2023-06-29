@@ -1,0 +1,56 @@
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff60;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para la tabla */
+  .container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .container th,
+  .container td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .container th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .container tbody:nth-child(even) {
+    background-color: #ee6464;
+  }
+  
+  .container select,
+  .container input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .container button {
+    padding: 10px 20px;
+    position: relative;
+    background-color: #dd535a7c;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .container button:hover {
+    background-color: #641818;
+    color: #ffffff;
+  }
+  

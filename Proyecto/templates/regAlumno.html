@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registro de Alumno</title>
+  <link rel="stylesheet" href="static/css/menuPreceptor.css">
+  <link rel="stylesheet" href="static/css/registro.css"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+  <div class="col-12 user-img">
+    <img src="..\static\img\Logo.png" />
+  <h2>Colegio San Miguel</h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a class="inicio" href="{{ url_for('menupreceptor') }}">Inicio</a></li>
+    <li><a class ="Registro" href="{{ url_for('registrarAsistencia') }}">Registrar asistencia</a></li>
+    <li><a class ="Informe" href="{{ url_for('generarInforme') }}">Informe con detalles</a></li>
+    <li><a class ="Cerrar sesion" href="{{ url_for('inicio') }}">Cerrar sesion</a></li>
+
+  </ul>
+  <div class="hide">
+    <i class="fa fa-bars" aria-hidden="true"></i> Menu
+  </div>
+</nav>
+<h1>Alumnos para registro</h1>
+      <hr/>
+      <div class="container">
+      <table>
+         <thead>
+            <tr>
+               <th>Apellido</th>
+               <th>nombre</th>  
+               <th>Asistio</th>
+               <th>Justificacion</th>              
+            </tr>
+         </thead>
+
+         <tbody>
+            <form action="/AsistenciaAlumnos" method="post" >
+            {% for i in longitud: %}
+               <tr>
+                  <td>{{ estudiantes[i].apellido }}</td>
+                  <td>{{ estudiantes[i].nombre }}</td>
+                  <td>
+				<select id="asistio{{i}}" name="asistio{{i}}">
+                    <option value="s">Sí</option>
+                    <option value="n">No</option>
+                </select>
+                </td>
+                <td>
+                    <input type="text" id="justificacion{{i}}" name="justificacion{{i}}" placeholder="Justificación">
+                </td>
+               </tr>
+            {% endfor %}
+            
+         </tbody>
+         <td> <button type="submit" name="faltas">Registrar Asistencia</button> </td>
+      </table>	  
+      <br><br>
+      </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(".hide").on('click', function() {
+      $("nav ul").toggle('slow');
+    })
+  </script>
+
+</body>
+</html>

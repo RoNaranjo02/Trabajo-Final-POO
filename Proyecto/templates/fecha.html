@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registrar Asistencia</title>
+  <link rel="stylesheet" href="static/css/menuPreceptor.css">
+  <link rel="stylesheet" href="static/css/fecha.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+  <div class="col-12 user-img">
+    <img src="../static/img/Logo.png" alt="Logo" />
+    <h2>Registrar inasistencias</h2>
+    <h2>Colegio San Miguel</h2>
+  </div>
+</header>
+
+<nav>
+  <div class="menu-toggle">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    <span>Menu</span>
+  </div>
+  <ul>
+    <li><a class="inicio" href="{{ url_for('menupreceptor') }}">Inicio</a></li>
+    <li><a class="Registro" href="{{ url_for('registrarAsistencia') }}">Registrar asistencia</a></li>
+    <li><a class ="Informe" href="{{ url_for('generarInforme') }}">Informe con detalles</a></li>
+    <li><a class ="Cerrar sesion" href="{{ url_for('inicio') }}">Cerrar sesion</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <h1>Cursos asignados</h1>
+  <hr/>
+  <div class="container">
+    <form action="{{ url_for('nueva_Asistencia') }}" method="post">
+      <label for="cursos">Cursos</label>
+      <select name="idcurso" class="form-select form-select-lg mb-3">
+        {% for c in PreceptorOnLine.curso %}
+        <option value="{{ c.id }}">{{ c.anio }} {{ c.division }}</option>
+        {% endfor %}
+      </select>
+      <label for="clase">Seleccionar Clase</label>
+      <select name="clase" class="form-select form-select-sm">
+        <option value="1">Aula</option>
+        <option value="2">Ed. Fisica</option>
+      </select>
+      <input type="date" id="fecha" name="fecha">
+      <br>
+      <br>
+      <br>
+      <button type="submit" name="asistencia">Registrar Asistencia</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".menu-toggle").click(function() {
+      $("nav ul").slideToggle('slow');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registrar Asistencia</title>
+  <link rel="stylesheet" href="static/css/menuPreceptor.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+  <div class="col-12 user-img">
+    <img src="..\static\img\Logo.png" />
+  <h2>Colegio San Miguel</h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a class="inicio" href="{{ url_for('menupreceptor') }}">Inicio</a></li>
+    <li><a class ="Registro" href="{{ url_for('registrarAsistencia') }}">Registrar asistencia</a></li>
+    <li><a class ="Informe" href="{{ url_for('generarInforme') }}">Informe con detalles</a></li>
+
+  </ul>
+  <div class="hide">
+    <i class="fa fa-bars" aria-hidden="true"></i> Menu
+  </div>
+</nav>
+<h1>Cursos asignados</h1>
+      <hr/>
+      <div class="container">
+
+         <tbody>
+          
+            <form action="{{ url_for('nueva_Asistencia') }}" method="post" >
+            
+            <label for="cursos">Cursos</label>
+            <select  name="idcurso" class="form-select form-select-lg mb-3">
+                {% for c in PreceptorOnLine.curso %}  
+                <option value="{{ c.id }}" >{{ c.anio }} {{ c.division }}</option>
+                {% endfor %}
+            </select>
+              <label for="clase">Cursos</label>
+              <select name="clase" class="form-select form-select-sm" >
+                <label for="clase">Seleccionar Clase</label>
+                <option value="1">Aula</option>
+                <option value="2">Ed.Fisica</option>
+              </select>
+              <input type="date" id="fecha" name="fecha"><br>
+              <br>
+              <br>
+
+              <td> <button type="submit" name="asistencia">Registrar Asistencia</button> </td>
+      
+      </div>
+            </form>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(".hide").on('click', function() {
+      $("nav ul").toggle('slow');
+    })
+  </script>
+
+</body>
+</html> -->
