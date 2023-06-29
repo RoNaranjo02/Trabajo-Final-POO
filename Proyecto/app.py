@@ -85,6 +85,9 @@ def nueva_Asistencia():
 			cursoActual= Curso.query.filter_by(id=curso).first() #me devuelve el objeto
 			estudiantes= Estudiante.query.filter_by(idcurso = cursoActual.id).order_by(Estudiante.apellido, Estudiante.nombre).all()
 			longitud=range(len(estudiantes))
+			asistencia_existente = Asistencia.query.filter_by(fecha=request.form['fecha']).first()	
+			if asistencia_existente:
+				return render_template('fecha.html', PreceptorOnLine=PreceptorOnLine, estudiantes=estudiantes, idcurso= curso, error="Ya existe una asistencia registrada para la fecha seleccionada", )
 			return render_template('regAlumno.html', estudiantes=estudiantes, longitud=longitud)
 
 @app.route('/AsistenciaAlumnos', methods = ['GET','POST'])
